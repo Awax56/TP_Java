@@ -14,17 +14,21 @@ public class AssureurQ3 {
             double montantAssureP) throws ContratInconnuException, ContratExistant {
         // creation d'un nouveau contrat de type typeContratDemande s'il existe
         // et enregistrement
+
         Contrat nouveauContrat;
-        if (typeContratDemande.equals("TiersCollision"))
+        if (typeContratDemande.equals("TiersCollision")) {
             nouveauContrat = new ContratTiersCollision(souscripteurP, immatriculationP, montantAssureP);
-        else if (typeContratDemande.equals("TousRisques"))
+        }
+        else if (typeContratDemande.equals("TousRisques")) {
             nouveauContrat = new ContratTousRisques(souscripteurP, immatriculationP, montantAssureP);
+        }
         else {
             throw new ContratInconnuException();
         }
 
-        if (contrats.contains(nouveauContrat))
+        if (contrats.contains(nouveauContrat)) {
             throw new ContratExistant();
+        }
 
         int indiceDansContrats = nouveauContrat.getNumero() - 1;
         contrats.add(indiceDansContrats, nouveauContrat);

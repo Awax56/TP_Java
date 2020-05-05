@@ -23,9 +23,7 @@ public class AssureurQ4 {
         }
 
         // on recherche si le client est deja enregistre
-        LinkedList<Contrat> listecontrat;
-        // listecontrat = (LinkedList<Contrat>) assures.get(nom);
-        listecontrat = assures.get(nom);
+        LinkedList<Contrat> listecontrat= assures.get(nom);
 
         if (listecontrat == null)
         // creation du nouveau client
